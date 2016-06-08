@@ -104,12 +104,6 @@ class ScheduleRequestException(Exception):
     pass
 
 
-def schedule_permutations(schedule_items, callback):
-    end = False
-    while not end:
-        pass
-
-
 def main():
     schedule_request = ScheduleRequest.from_lines(sys.stdin.readlines())
     print(schedule_request.items)

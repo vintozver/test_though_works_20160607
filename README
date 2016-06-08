@@ -1,3 +1,9 @@
+= General information =
+Development & Testing env: GNU/Linux, python3, vim, shell
+
+= Task 1 =
+
+== Usage ==
 Test command (sh, bash)
 $ echo "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7" | ./task1.py
 
@@ -44,4 +50,55 @@ Output #7: 0
 Output #8: NO PATH FOUND
 Output #9: NO REQESTED LOOP
 Output #10: 0
+
+
+= Task 2 =
+Not ready yet.
+
+Basic idea is to backtrack with constraints.
+Constraint 1: duration of chained tasks == 3h (first slot)
+Constraint 2: duraction of chained tasks is [3h, 4h] (second slot)
+Adding tasks, checking constraints, if addition without violation is not possible - abandon the branch and backtrack to the next option.
+If out of options - scheduling is not possible (too few tasks or their duration cannot fit in constraints)
+
+
+= Task 3 =
+
+Basic idea: collect strings, tokenize, check tokens, parse.
+Currency exchange is represented by graph to allow currency exhange through intermediate currencies.
+For example, exhange rates Silver/Credits, Gold/Credits, Iron/Credits are defined, but Silver/Gold, Iron/Silver, Gold/Iron and backwards can be calculated from existing
+If exchange is not avaiable directly and cannot be traversed through intermediate currencies, user will be notified about this condition
+
+It's highly recommended to store currency exchange rates as fractions because floating point formats or decimal formats with fixed point may loose the precision
+As long as we don't perform any irrational operations, storing exchange rates as fractions will guarantee precision calculations.
+Fractions may be converted to decimals on the final stage when displayed to the user.
+
+Financial applications require precision calculations ;)
+
+== Usage ==
+
+$ cat task3.1.dat | ./task3.py
+pish tegj glob glob is 42
+glob prok Silver is 68.000000 Credits
+glob prok Gold is 57800.000000 Credits
+glob prok Iron is 782.000000 Credits
+
+== More tests ==
+
+glob is I
+glob Iron is 2 Credits
+glob Silver is 4 Credits
+glob Gold is 8 Credits
+how much is glob glob glob ?
+how many Iron is glob glob Silver ?
+how many Silver is glob glob Gold ?
+how many Gold is glob glob Silver ?
+how many Credits is glob glob Silver ?
+
+$ cat task3.2.dat | ./task3.py
+glob glob glob is 3
+glob glob Silver is 4.000000 Iron
+glob glob Gold is 4.000000 Silver
+glob glob Silver is 1.000000 Gold
+glob glob Silver is 8.000000 Credits
 
