@@ -1,0 +1,47 @@
+Test command (sh, bash)
+$ echo "AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7" | ./task1.py
+
+Test response:
+
+Output #1: 9
+Output #2: 5
+Output #3: 13
+Output #4: 22
+Output #5: NO SUCH ROUTE
+Output #6: 2
+Output #7: 3
+Output #8: 9
+Output #9: 9
+Output #10: 7
+
+
+== More tests ==
+
+=== Lack of routes ===
+
+$ echo "AB1, CD1" | ./task1.py
+Output #1: NO SUCH ROUTE
+Output #2: NO SUCH ROUTE
+Output #3: NO SUCH ROUTE
+Output #4: NO SUCH ROUTE
+Output #5: NO SUCH ROUTE
+Output #6: 0
+Output #7: 0
+Output #8: NO PATH FOUND
+Output #9: NO REQESTED LOOP
+Output #10: 0
+
+=== Missing nodes ===
+
+$ echo "AB1" | ./task1.py
+Output #1: NO SUCH ROUTE
+Output #2: NO SUCH ROUTE
+Output #3: NO SUCH ROUTE
+Output #4: NO SUCH ROUTE
+Output #5: NO SUCH ROUTE
+Output #6: 0
+Output #7: 0
+Output #8: NO PATH FOUND
+Output #9: NO REQESTED LOOP
+Output #10: 0
+
